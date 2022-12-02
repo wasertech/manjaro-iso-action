@@ -173,7 +173,7 @@ runs:
         sudo pacman-key --populate archlinux manjaro
 
         for gpg_key in ${{ inputs.additional-trusted-gpg }}; do
-          sudo pacman-key --keyserver keys.openpgp.org --recv-key $gpg_key
+          sudo pacman-key --keyserver keyserver.ubuntu.com --recv-key $gpg_key
         done
     - id: install-arch-install-scripts
       shell: bash

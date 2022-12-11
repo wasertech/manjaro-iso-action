@@ -224,7 +224,7 @@ runs:
       env:
         REPO: ${{ inputs.iso-profiles-repo }}
         BRANCH: ${{ inputs.iso-profiles-branch }}
-      run: sudo git clone ${BRANCH:+--branch ${BRANCH}} --depth 2 ${REPO} iso-profiles
+      run: sudo git clone ${BRANCH:+--branch ${BRANCH}} --recurse-submodules ${REPO} iso-profiles
     - id: image-build
       shell: bash
       env:
